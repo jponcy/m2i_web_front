@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemple tableau</title>
+
+  <style>
+    td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exemple de tableaux</h1>
+
+  <h2>Table simple</h2>
+
+  <table>
+    <tr>
+      <!-- Table Row => Une ligne du tableau-->
+      <th> <!-- Table Header => Cellule de titre. -->
+        Nom
+      </th>
+      <th>Prénom</th>
+    </tr>
+
+    <tr>
+      <td> <!-- Table data => Une cellule de valeur. -->
+        Dupont
+      </td>
+      <td>Jean</td>
+    </tr>
+
+    <tr>
+      <td>Hereng</td>
+      <td>Arnaud</td>
+    </tr>
+
+    <tr>
+      <td>Dupond</td>
+      <td>Bertrant</td>
+    </tr>
+  </table>
+
+
+  <h2>Tableau long</h2>
+
+  <p>
+    Pour les tableaux long (qui peuvent être imprimé sur plusieurs pages), nous devons rajouter de nouvelles balises : thead, tbody, tfoot.
+    Elles permettent de bien séparer les titres/les pieds/contenu afin de pouvoir par exemple reproduire l'en-tête et le pied de tableau sur chaque page imprimé.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Dupont</td>
+        <td>Jean</td>
+      </tr>
+
+      <tr>
+        <td>Hereng</td>
+        <td>Arnaud</td>
+      </tr>
+
+      <tr>
+        <td>Dupond</td>
+        <td>Bertrant</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Fusions</h2>
+
+  <p>
+    On va utiliser les attributs HTML suivants : colspan, rowspan.
+  </p>
+
+  <table>
+    <tr>
+      <th>Titre n°1</th>
+      <th>Titre n°2</th>
+      <th>Titre n°3</th>
+      <th>Titre n°4</th>
+    </tr>
+
+    <tr>
+      <td>Lorem ipsum dolor sit.</td>
+      <td colspan="2">Alias ea omnis nobis! Fusion de 2 colonnes avec colspan="2".</td>
+      <td>Iusto provident enim ad?</td>
+    </tr>
+    <tr>
+      <td>Repellat quod accusamus ea.</td>
+      <td>Perferendis reiciendis autem consequatur.</td>
+      <td>Voluptatum perspiciatis aspernatur dolorem.</td>
+      <td>Aliquam eveniet sint dolore.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Expedita omnis assumenda cumque. Fusion de lignes avec rowspan="2".</td>
+      <td>Vel quibusdam quaerat alias!</td>
+      <td>Quae alias aliquid optio?</td>
+      <td>Facere ullam pariatur neque!</td>
+    </tr>
+    <tr>
+      <td>Expedita quos doloremque corrupti!</td>
+      <td>Cum repellendus itaque quis.</td>
+      <td>Mollitia similique fugit id!</td>
+    </tr>
+  </table>
+</body>
+
+</html>

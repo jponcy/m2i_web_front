@@ -6,12 +6,99 @@
   Elle ne compte pas pour les regles de limite (une seule balise a la racine).
   Les balises speciales se reconnaissent au '!' apres le '<'.
 -->
-<html> <!-- La balide racine d'une page HTML (seule balise non contenu dans une autre). -->
+<html> <!-- La balise racine d'une page HTML (seule balise non contenu dans une autre). -->
   <head> <!-- Reglages de la page. -->
     <title>Ma première page</title> <!-- Changement du nom de la page (affichée dans l'onglet). -->
   </head>
 
   <body> <!-- Corps reel de la page. -->
-    Coucou
+
+    <h1>Titre de niveau 1 &rarr; un seul dans le conteneur (page/article/section/...)</h1>
+    <h2>Titre de niveau 2</h2>
+    <h3>Titre de niveau 3</h3>
+    <h4>Titre de niveau 4</h4>
+    <h5>Titre de niveau 5</h5>
+    <h6>Titre de niveau 6</h6>
+
+    <p>
+      Ceci est un paragraphe.
+    </p>
+
+    <p>
+      Ceci est un autre paragraphe.
+      <br> <!-- Saut de ligne (\n ; different de faire un nouveau paragraphe). -->
+      <br /> <!-- Syntaxe XHTML accepté. Mais la syntaxe de base en HTML5 n'a pas ce /. -->
+      Avec un saut de ligne.
+    </p>
+
+    <p>
+      <!-- a => anchor : sert à décrire des lien (hypertexte/d'ancrage/...). -->
+      <a href="http://URL">Nom affiché</a>
+      <br>
+      La <a href="https://www.w3.org/">W3C</a> est le consortium définissant les règles/normes du web (HTML/CSS/JS/...).
+    </p>
+
+    <p>
+      Voici une lsite non ordonnée :
+      <ul> <!-- Unordered List => liste non ordonnée. -->
+        <li>Lorem ipsum dolor sit amet consectetur.</li> <!-- List Item => un élément de la liste. -->
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+      </ul>
+
+      J'aime les :
+      <ol> <!-- Ordered List => List ordonnée.-->
+        <li>fruits</li>
+        <li>
+          légumes :
+          <ul>
+            <li>courgette</li>
+            <li>concombre</li>
+          </ul>
+        </li>
+        <li>circuit-imprimés  </li>
+      </ol>
+
+      <dl> <!-- Description List => Liste de description | dictionnaires.-->
+        <dt>Clef</dt> <!-- Description Term => l'élément décrit-->
+        <dd>Définition</dd> <!-- Description Data => la définition. -->
+
+        <dt>dl</dt>
+        <dd>Liste de description</dd>
+
+        <dt>ul</dt>
+        <dd>Liste non ordonnée</dd>
+
+        <dt>lorem ipsum</dt>
+        <dd>Texte fictif (ressemblant à du Latin) permettant de faire des remplissage de page. Cela a plusieurs avantages par rapport à faire du texte réel lors de la création de design WEB :
+          <ul>
+            <li>différents cas gérés (les tailles des mots changent, ...)</li>
+            <li>on ne se soucis pas du contenu</li>
+            <li>s'écrit vite (de nombreux générateurs)</li>
+          </ul>
+        </dd>
+      </dl>
+    </p>
+
+    <hr>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab saepe nesciunt dolorum quos officia asperiores placeat amet ratione doloremque perspiciatis magni id velit veritatis, maiores, deserunt in est sint. Sit.
+    </p>
+    <p>
+      Voluptates consectetur sint totam pariatur sapiente voluptatibus in quia, molestiae impedit rem, voluptatem ullam itaque incidunt excepturi quasi corrupti aliquam praesentium natus laboriosam id. Doloremque obcaecati adipisci nemo soluta perspiciatis!
+    </p>
+
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex saepe exercitationem facere atque dolorum maiores accusamus asperiores, mollitia quasi possimus, quaerat quod voluptatem sit omnis suscipit nesciunt placeat illo?
+      <br>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, suscipit, quod hic libero culpa rem qui iure rerum molestiae doloribus voluptas? Quo rem necessitatibus, magnam eius eos unde libero accusamus.
+    </p>
+
+
+
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum est officia dolores et voluptatem, obcaecati officiis nihil repudiandae minus at impedit reiciendis laborum doloribus.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatibus ut possimus, eveniet ab, ipsam quaerat porro a officia iusto dolorem ducimus aliquam doloremque atque, error neque eum voluptas? Nisi.
+
   </body>
 </html>
