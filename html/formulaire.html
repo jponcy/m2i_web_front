@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire</title>
+</head>
+<body>
+  <h1>Formulaire</h1>
+
+  <!--
+    action => cible qui doit traiter les données du formulaire (peut-être une URL, une adresse email).
+
+    Méthode GET  => récupération d'information (filtrage).
+    Méthode POST => demander une modification des données (création d'un objet, sa modification, suppression).
+  -->
+
+  <form action="" method="GET">
+    <div>
+      <label for="gname">Nom du jeu</label>
+      <!-- L'attribut name correspond a la clef qui identifiera la valeur dans le mail (ou code serveur) qui traitera la demande.
+      Si ce nom est omis, alors la valeur ne sera pas présente. -->
+      <input name="game_name" id="gname">
+    </div>
+
+    <div>
+      <label for="gmin">Note minimum</label>
+
+      <!--
+        On peut ajouter des contraintes sur un input, exemple :
+        * min       => impose une valeur minimum (nombre)
+        * max       => impose une valeur maximum (nombre)
+        * minLength => taille minimum d'une chaine de caractère
+        * maxLength => taille maximum d'une chaine de caractère
+        * required  => rend l'input non facultative
+        * pattern   => permet de renseigner une REGEX
+      -->
+      <input type="number" name="game_min_note" id="gmin" min="1" max="10">
+    </div>
+
+    <!--
+      Hack utilisé par certains dev/intégrateurs
+      (déconseillé car HTML non valide)
+    <label>
+      Nom du jeu
+      <input name="game_name">
+    </label>
+    -->
+
+    <!--
+      Bouton d'envoi du formulaire
+      (mettre un attribut name permet de rendre le bouton d'action en tant que "champ" du formulaire).
+    -->
+    <input type="submit" value="Filtrer">
+  </form>
+</body>
+</html>
