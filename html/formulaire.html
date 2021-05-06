@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire</title>
 </head>
+
 <body>
   <h1>Formulaire</h1>
 
@@ -16,42 +18,180 @@
   -->
 
   <form action="" method="GET">
-    <div>
-      <label for="gname">Nom du jeu</label>
-      <!-- L'attribut name correspond a la clef qui identifiera la valeur dans le mail (ou code serveur) qui traitera la demande.
-      Si ce nom est omis, alors la valeur ne sera pas présente. -->
-      <input name="game_name" id="gname">
-    </div>
+    <fieldset>
+      <legend>Inputs</legend>
 
-    <div>
-      <label for="gmin">Note minimum</label>
+      <div>
+        <label for="gname">Nom du jeu</label>
+        <!-- L'attribut name correspond a la clef qui identifiera la valeur dans le mail (ou code serveur) qui traitera la demande.
+        Si ce nom est omis, alors la valeur ne sera pas présente.
+        Le type par défaut d'une input est text.-->
+        <input name="game_name" id="gname">
+      </div>
+
+      <div>
+        <label for="gmin">Note minimum</label>
+
+        <!--
+          On peut ajouter des contraintes sur un input, exemple :
+          * min       => impose une valeur minimum (nombre)
+          * max       => impose une valeur maximum (nombre)
+          * minLength => taille minimum d'une chaine de caractère
+          * maxLength => taille maximum d'une chaine de caractère
+          * required  => rend l'input non facultative
+          * pattern   => permet de renseigner une REGEX
+        -->
+        <input type="number" name="game_min_note" id="gmin" min="1" max="10">
+      </div>
 
       <!--
-        On peut ajouter des contraintes sur un input, exemple :
-        * min       => impose une valeur minimum (nombre)
-        * max       => impose une valeur maximum (nombre)
-        * minLength => taille minimum d'une chaine de caractère
-        * maxLength => taille maximum d'une chaine de caractère
-        * required  => rend l'input non facultative
-        * pattern   => permet de renseigner une REGEX
+        Hack utilisé par certains dev/intégrateurs
+        (déconseillé car HTML non valide)
+      <label>
+        Nom du jeu
+        <input name="game_name">
+      </label>
       -->
-      <input type="number" name="game_min_note" id="gmin" min="1" max="10">
+
+      <!-- <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" pattern="[\w.-]+@\w+\.\w{1,3}">
+      </div>
+
+      <input type="color">
+      <input type="date">
+      <input type="datetime">
+      <input type="datetime-local">
+      <input type="file">
+      <input type="email">
+      <input type="image">
+      <input type="month">
+      <input type="password" value="toto35"> -->
+    </fieldset>
+
+    <fieldset>
+      <legend>Select</legend>
+      <p>
+        Pour illustrer un peu mieux les select, immaginons la BDD suivante :
+      </p>
+      <pre>
+        CREATE TABLE genre_jeux(
+          genre_id NUMBER AS IDENTITY PRIMARY KEY,
+          label VARCHAR2 NOT NULL
+        );
+
+        CREATE TABLE jeux (
+          jeux_id NUMBER AS IDENTITY PRIMARY KEY,
+          nom VARCHAR2 NOT NULL,
+          note NUMBER,
+          genre_id NUMBER NOT NULL,
+          CONSTRAINT fk_jeux_genre
+            FOREIGN KEY (genre_id)
+            REFERENCES genre_jeux(genre_id)
+        )
+      </pre>
+
+      <p>
+        Si l'on concerve les valeurs par défaut des options (le label affiché).
+      </p>
+
+      <div>
+        <label for="genre_str">Type de jeux (str)</label>
+        <select name="game_genre_str" id="genre_str">
+          <option></option>
+          <option>Simulation</option>
+          <option>Combat</option>
+          <option>plateforme</option>
+        </select>
+      </div>
+
+      <pre>
+        SELECT *
+        FROM jeux j
+        INNER JOIN genre_jeux g ON j.genre_id = g.genre_id
+        WHERE g.label = :game_genre_str
+      </pre>
+
+      <p>
+        Si l'on utilise les ID de la table comme valeur des options, on aurait :
+      </p>
+
+      <div>
+        <label for="genre_id">Type de jeux (id)</label>
+        <select name="game_genre_id" id="genre_id" required>
+          <option></option>
+          <option value="1">Simulation</option>
+          <option value="2">Combat</option>
+          <option value="425">plateforme</option>
+        </select>
+      </div>
+
+      <pre>
+        SELECT *
+        FROM jeux
+        WHERE genre_id = :game_genre_id
+      </pre>
+    </fieldset>
+
+    <fieldset>
+      <legend>Input / Checkbox</legend>
+
+      <div>
+        <p>
+          Quels sont vos fruits préférés :
+        </p>
+
+        <div>
+          <input type="checkbox" name="fruit" id="fruit_pomme" value="pomme">
+          <label for="fruit_pomme">Pomme</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="fruit" id="fruit_fraise" value="fraise">
+          <label for="fruit_fraise">Fraise</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="fruit" id="fruit_poire" value="poire">
+          <label for="fruit_poire">Poire</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Input / radio</legend>
+
+      <p>
+        Quels est votre fruit préféré :
+      </p>
+
+      <div>
+        <input type="radio" name="radio_fruit" id="radio_fruit_pomme" value="pomme">
+        <label for="radio_fruit_pomme">Pomme</label>
+      </div>
+
+      <div>
+        <input type="radio" name="radio_fruit" id="radio_fruit_fraise" value="fraise">
+        <label for="radio_fruit_fraise">Fraise</label>
+      </div>
+
+      <div>
+        <input type="radio" name="radio_fruit" id="radio_fruit_poire" value="poire">
+        <label for="radio_fruit_poire">Poire</label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <!--
+        Bouton d'envoi du formulaire
+        (mettre un attribut name permet de rendre le bouton d'action en tant que "champ" du formulaire).
+      -->
+      <input type="submit" value="Filtrer">
+
+      <!-- reset => remise à zéro du formulaire-->
+      <input type="reset" value="RAZ">
     </div>
-
-    <!--
-      Hack utilisé par certains dev/intégrateurs
-      (déconseillé car HTML non valide)
-    <label>
-      Nom du jeu
-      <input name="game_name">
-    </label>
-    -->
-
-    <!--
-      Bouton d'envoi du formulaire
-      (mettre un attribut name permet de rendre le bouton d'action en tant que "champ" du formulaire).
-    -->
-    <input type="submit" value="Filtrer">
   </form>
 </body>
+
 </html>
