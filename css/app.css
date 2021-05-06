@@ -1,0 +1,76 @@
+/* selecteur {
+  NomPropriété1: Valeur;
+  NomPropriété2: Valeur2;
+  NomPropriété3: Valeur3;
+} */
+
+body {
+  font-size: 12pt;
+}
+
+h1 {
+  color: red;
+}
+
+/* Selecteur avec une classe (le . represente qu'il s'agit d'une classe). */
+.class { font-size: 2em; }
+
+/* Selecteur avec un id. */
+#id { font-size: 2em; }
+
+/* On peut mettre plusieurs selecteur ennsemble avec , */
+.deconseille,
+.conseille {
+  font-style: italic;
+}
+
+/*
+ * Selecteur composé frère se fait avec +.
+ * Dans l'exemple présent, on prend le paragraphe frère direct d'un titre de niveau 1.
+ */
+h1+p {
+  font-size: 4em;
+  color: darkcyan;
+}
+
+/*
+ * Selecteur composé d'enfant direct avec >.
+ */
+p>span {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*
+  <p>
+    Salut <span>tout le monde</span> !
+    Ici le span est bien affecté par la règle.
+  </p>
+
+  <p>
+    Coucou <strong>Tout <span>le</span> monde !</strong>.
+    Ici le span N'est PAS affecté par la règle.
+  </p>
+ */
+
+/*
+ * Selecteur composé d'enfant (qu'importe le niveau) avec espace.
+ */
+p span {
+  border: 1px solid orange;
+}
+
+.deconseille {
+  color: orange;
+}
+
+.conseille {
+  color: green;
+}
+
+button {
+  background-color: beige;
+}
+/* Pseudo-class (ici on ajoute la condition que la souris soit au dessus de l'élément). */
+button:hover {
+  background-color: pink;
+  cursor: pointer;
+}

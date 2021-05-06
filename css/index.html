@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index CSS</title>
+
+  <!-- Balise pour déclarer du CSS en début de fichier. -->
+  <style></style>
+
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <h1>Le CSS</h1>
+
+  <p>
+    Signifie <span style="font-size: 1.2em;">C</span>ascading Style Sheet.
+  </p>
+
+  <button>Toto</button>
+
+
+  <h2>Les sélecteurs</h2>
+
+  <p>
+    Peuvent être :
+  </p>
+  <ul>
+    <li>le nom d'une balise HTML (ex: h1, p)</li>
+  </ul>
+
+
+
+  <h2>Quelques propriétés CSS</h2>
+
+  <dl>
+    <dt style="color: blue;">color</dt>
+    <dd>Choix de la couleur de police d'écriture</dd>
+
+    <dt>
+      <span style="background-color: silver;">
+        background-color
+      </span>
+    </dt>
+    <dd>changement de la couleur de fond</dd>
+
+    <dt style="font-family: 'Times New Roman', Times, serif;">font-family</dt>
+    <dd>Changement de la police d'écriture. Plusieurs noms peuvent être fournis. Les noms de polices sont lus de gauche à droite. La première trouvée/disponible est concervé.</dd>
+
+    <dt style="font-size: 1.35em;">font-size</dt>
+    <dd>
+      Changement de la taille de la police
+      (exprimé la taille : <span class="conseille">rem, em, pt</span>, <span class="deconseille">%, px</span>)
+      <ul>
+        <li>rem => pourcentage par rapport à la taille de police configuré sur le body</li>
+        <li>em => pourcentage par rapport à la taille de la police</li>
+        <li>pt => taille de police</li>
+        <li>% => pourcentage par rapport à la taille de la balise</li>
+        <li>px => taille en pixel (pas fiable dû aux différences de densités de certains écrans)</li>
+      </ul>
+      <p style="font-size: 1.2em;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perferendis aliquam quod! Numquam, labore quos.
+      </p>
+      <p style="font-size: 1.2rem;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perferendis aliquam quod! Numquam, labore quos.
+      </p>
+    </dd>
+
+    <dt style="margin-top: 10px;">margin-top</dt>
+    <dd>Choix de la marge extérieur au dessus. On a les variantes pour les autres directions (right, left, bottom)</dd>
+    <dd></dd>
+
+    <dt style="padding-top: 10px;">padding-top</dt>
+    <dd>Choix de la marge intérieur au dessus. On a les variantes pour les autres directions (right, left, bottom)</dd>
+
+    <dt>margin/padding</dt>
+    <dd>On parle de super propriété. Elles permettent de saisir plusieurs valeurs en même temps. Par exemple :
+      <pre>
+        margin: 10px;
+        /* Revient à la même chose que : */
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        margin: 5px 10px 5px 10px;
+        /* Revient à la même chose que : */
+        margin: 5px 10px;
+        /* Revient à la même chose que : */
+        margin-top: 5px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+      </pre>
+    </dd>
+
+    <dt style="border: 1px solid black;">border</dt>
+    <dd>Super propriété permettant de saisir en un coup les propriétés suivantes :
+      <ul>
+        <li>border-top-color</li>
+        <li>border-top-style</li>
+        <li>border-top-width</li>
+        <li>border-right-color</li>
+        <li>border-right-style</li>
+        <li>border-right-width</li>
+        <li>border-bottom-color</li>
+        <li>border-bottom-style</li>
+        <li>border-bottom-width</li>
+        <li>border-left-color</li>
+        <li>border-left-style</li>
+        <li>border-left-width</li>
+      </ul>
+    </dd>
+
+    <dt>border-radius</dt>
+    <dd>gestion des bordures arrondis</dd>
+
+    <dt>overflow-x, overflow-y, overflow</dt>
+    <dd>Gestion des dépassements (pour afficher ou non une scroll bar).</dd>
+
+    <dt>width/heigth</dt>
+    <dd>Gérer la largeur/hauteur
+      <br>
+      Exemples :
+      <pre>
+        width: 50%;
+        heuteur: 10vh;
+      </pre>
+
+      <div style="width: 400px; height: 400px; background-color: silver;">
+        <p style="background-color: beige; width: 50%; height: 30%; overflow-y: auto;">
+          width=50%; Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio asperiores consequatur quia sit enim esse consequuntur, fugiat sequi rem, cum ullam debitis ipsam sunt ad laborum odit aspernatur error tempore?
+        </p>
+        <p style="background-color: beige; width: 50vw;">
+          width=50vw; Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio asperiores consequatur quia sit enim esse consequuntur, fugiat sequi rem, cum ullam debitis ipsam sunt ad laborum odit aspernatur error tempore?
+        </p>
+      </div>
+    </dd>
+
+    <dt>display</dt>
+    <dd>changement de la nature d'un élément HTML : block, inline, inline-block, flex, ...</dd>
+  </dl>
+</body>
+</html>

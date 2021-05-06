@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TP2 | Correction</title>
+</head>
+<body>
+  <h1>Correction du TP&nbsp;2</h1>
+
+  <form action="mailto:test.mail@yopmail.com" method="POST">
+    <fieldset>
+      <div>
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" required>
+      </div>
+
+      <div>
+        <label for="prix">Prix de vente en € (HT)</label>
+        <input type="number" name="prix" id="prix" min="0" step="0.1" required>
+      </div>
+
+      <div>
+        <label for="note">Note moyenne de satisfaction (/10)</label>
+        <input type="number" name="note" id="note" min="1" max="10" required>
+      </div>
+
+      <div>
+        <p>Genre du jeu</p>
+
+        <div>
+          <input type="checkbox" name="genre" id="genre_platform" value="platform">
+          <label for="genre_platform">Plateform</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="genre" id="genre_action" value="action">
+          <label for="genre_action">Action</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="genre" id="genre_combat" value="combat">
+          <label for="genre_combat">Combat</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="dev">Qui a créé le jeu ?</label>
+        <select name="dev" id="dev" required>
+          <option value="">Sélectionner un dev</option>
+          <option value="ea">Electronic Art</option>
+          <option value="bs">Behemot</option>
+          <option value="ubi">Ubisoft</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="editeur">Qui a publié le jeu ?</label>
+        <select name="editeur" id="editeur" required>
+          <option value="">Sélectionner un éditeur</option>
+          <option value="ea">Electronic Art</option>
+          <option value="bs">Behemot Studio</option>
+          <option value="ubi">Ubisoft</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div>
+        <label for="description">Description détaillée</label>
+      </div>
+      <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    </fieldset>
+
+    <input type="submit" value="Enregistrer le jeu">
+  </form>
+</body>
+</html>
