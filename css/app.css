@@ -1,74 +1,64 @@
-/* selecteur {
-  NomPropriété1: Valeur;
-  NomPropriété2: Valeur2;
-  NomPropriété3: Valeur3;
-} */
-
 body {
-  font-size: 12pt;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 14pt;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 0 10px;
+  /* border-left: 1px solid black;
+  border-right: 1px solid black; */
+}
+
+@media screen and (min-width: 1300px) {
+  .container { width: 1200px; }
 }
 
 h1 {
-  color: red;
+  color: navy;
+  text-align: center;
+  text-decoration: underline;
+}
+h2 { color: blue; }
+
+p {
+  text-align: justify;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
-/* Selecteur avec une classe (le . represente qu'il s'agit d'une classe). */
-.class { font-size: 2em; }
+dt { font-weight: bold; }
+dt::first-letter,
+dd::first-letter { text-transform: uppercase; }
+dd { font-style: italic; }
+dt::after { content: ' :'; }
 
-/* Selecteur avec un id. */
-#id { font-size: 2em; }
+li::first-letter { text-transform: lowercase; }
 
-/* On peut mettre plusieurs selecteur ennsemble avec , */
-.deconseille,
-.conseille {
-  font-style: italic;
+p+ul,
+p+ol,
+p+dl {
+  margin-top: 2px;
+  padding-top: 0;
 }
 
-/*
- * Selecteur composé frère se fait avec +.
- * Dans l'exemple présent, on prend le paragraphe frère direct d'un titre de niveau 1.
- */
-h1+p {
-  font-size: 4em;
-  color: darkcyan;
-}
-
-/*
- * Selecteur composé d'enfant direct avec >.
- */
-p>span {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-/*
-  <p>
-    Salut <span>tout le monde</span> !
-    Ici le span est bien affecté par la règle.
-  </p>
-
-  <p>
-    Coucou <strong>Tout <span>le</span> monde !</strong>.
-    Ici le span N'est PAS affecté par la règle.
-  </p>
- */
-
-/*
- * Selecteur composé d'enfant (qu'importe le niveau) avec espace.
- */
-p span {
-  border: 1px solid orange;
-}
-
-.deconseille {
-  color: orange;
-}
-
-.conseille {
-  color: green;
-}
-
-button {
+button,
+a.btn {
+  text-decoration: none;
+  padding: 10px 30px;
   background-color: beige;
+  color: black;
+  border: 1px solid gray;
+  border-style: inset;
 }
+
+button:hover,
+a.btn:hover {
+  background-color: orange;
+  font-weight: bold;
+}
+
 /* Pseudo-class (ici on ajoute la condition que la souris soit au dessus de l'élément). */
 button:hover {
   background-color: pink;
