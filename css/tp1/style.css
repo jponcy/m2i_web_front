@@ -1,0 +1,67 @@
+/*
+ * Il est possible d'importer une feuille de style dans une autre à l'aide de l'instruction @import.
+ * Mais cette dernière provoque la nécessité de faire une nouvelle requête (HTTP) pour chaque import.
+ */
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css';
+
+h1 {
+  color: orange;
+  font-size: 3.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+tr>td:first-of-type {
+  font-weight: bold;
+}
+
+a,
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+/*
+ * '*' => n'importe quelle balise
+ L'utilisation de ce "joker" est déconseillé (car il réduit les performances).
+ */
+/* * {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+/*
+ * Utilisation du principe de cascade.
+ * Toutes les règles appliquées sur body seront répercutées aux balises enfants (si elles n'ont pas de règle contradictoire).
+ */
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* a {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+  font-family: 'Times New Roman', Times, serif;
+} */
+
+.btn-primary {
+  background-color: green; /* Ecrasement d'une règle de bootstrap. */
+}
+.btn-primary::first-letter {
+  text-transform: uppercase;
+}
+
+dt { font-weight: bold; }
+
+dt::after { content: ' :'; }
