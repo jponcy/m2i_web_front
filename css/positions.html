@@ -119,6 +119,27 @@
     <main>
       <h1>Quelques systèmes de positionnements en CSS</h1>
 
+      <h2>Propriété position</h2>
+
+      <p style="position: absolute; background-color: gray; color: lime; top: 0; left: 0;">
+        Texte en absolue
+      </p>
+
+      <p style="background-color: pink;">
+        <span style="position: relative; left: -15px;">
+          &rarr;
+        </span>
+        Flèche placée en position relative (sert souvent à positionner une icone par rapport à du texte ou une balise).
+      </p>
+
+      <p style="position: sticky; top: 0; background-color: darkgreen; color: beige;">
+        Texte sticky -- souvent utilisé pour les menu (afin quil reste toujours visible sur l'écran).
+      </p>
+
+      <p style="position: fixed; top: 0; right: 0; background-color: gray; color: lime;">
+        Texte en position fixed.
+      </p>
+
       <h2>Propriété float</h2>
 
       <p class="text-avec-image">
