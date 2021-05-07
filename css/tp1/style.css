@@ -65,3 +65,80 @@ a {
 dt { font-weight: bold; }
 
 dt::after { content: ' :'; }
+
+.cards main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 1px solid black;
+  width: 300px;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card header,
+.card main,
+.card footer {
+  padding: 5px;
+}
+
+.card main {
+  flex-grow: 1;
+}
+
+.card header {
+  background-color: beige;
+  border-bottom: 1px solid orange;
+}
+
+.card h1 {
+  font-size: 2em;
+  color: black;
+}
+
+.card header small {
+  text-align: right;
+  display: block;
+  font-style: italic;
+}
+
+.card footer {
+  /*
+  white : rgb(255, 255, 255); => #FFFFFF => #FFF
+  black : rgb(0, 0, 0);       => #000000 => #000
+  red   : rgb(255, 0, 0);     => #FF0000 => #F00
+  couleurspeciale: rgb(180, 180, 0);
+  couleurspeciale: rgb(180, 180, 0);
+  */
+  background-color: rgba(18, 88, 22, 0.5);
+  background-color: #8caf1886;
+  /*
+  0 =>  0
+  1 =>  1
+  2 =>  2
+  3 =>  3
+  4 =>  4
+  5 =>  5
+  6 =>  6
+  7 =>  7
+  8 =>  8
+  9 =>  9
+  A => 10
+  B => 11
+  C => 12
+  D => 13
+  E => 14
+  F => 15
+ 10 => 16
+ 11 => 17
+ */
+}
+
+.card footer a.btn {
+  color: #FFF;
+}

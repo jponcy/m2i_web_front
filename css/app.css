@@ -1,18 +1,23 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 14pt;
+  padding-top: 10px;
+  background-color: rgb(241, 241, 235);
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 0 10px;
   /* border-left: 1px solid black;
   border-right: 1px solid black; */
 }
 
-@media screen and (min-width: 1300px) {
-  .container { width: 1200px; }
+@media screen and (min-width: 800px) and (max-width: 1599px) {
+  .container { width: 600px; }
+}
+@media screen and (min-width: 1600px) {
+  .container { width: 1400px; }
 }
 
 h1 {
@@ -51,16 +56,15 @@ a.btn {
   color: black;
   border: 1px solid gray;
   border-style: inset;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
 }
 
 button:hover,
 a.btn:hover {
   background-color: orange;
   font-weight: bold;
-}
-
-/* Pseudo-class (ici on ajoute la condition que la souris soit au dessus de l'élément). */
-button:hover {
-  background-color: pink;
-  cursor: pointer;
 }

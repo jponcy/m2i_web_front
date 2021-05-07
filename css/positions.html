@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quelques systèmes de positionnements en CSS</title>
+
+  <link rel="stylesheet" href="app.css">
+
+  <style>
+    .text-avec-image {
+      text-align: justify;
+      word-wrap: break-word;
+    }
+
+    .text-avec-image img {
+      float: right;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      padding: 0;
+      /* visibility: hidden; */ /* Permet de cacher un élément (mais l'espace est toujours réservé). */
+      /* display: none; */ /* Permet de cacher un élément (et de réallouer l'espace). */
+      /* border-left: 1px solid black; */
+    }
+
+    /* Règles spécifique en cas d'impression de la page. */
+    @media print {
+      header,
+      footer {
+        display: none;
+      }
+
+      body {
+        background-color: inherit;
+        font-size: 10pt;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .text-avec-image.sm-full-image img {
+        width: 100%;
+      }
+    }
+
+
+    .inline-block {
+      display: inline-block;
+      border: 1px solid black;
+      vertical-align: top;
+      width: 100%;
+    }
+    .inline-block:last-of-type {
+      padding: 5px;
+    }
+    @media screen and (min-width: 800px) and (max-width: 1599px) {
+      .inline-block:first-of-type {
+        width: 150px;
+      }
+      .inline-block:last-of-type {
+        width: 430px;
+      }
+    }
+    @media screen and (min-width: 1600px) {
+      .inline-block:first-of-type {
+        width: 150px;
+      }
+      .inline-block:last-of-type {
+        width: 1230px;
+      }
+    }
+
+    .btn-inline-block .btn {
+      display: inline-block;
+    }
+
+    .flex {
+      background: silver;
+      height: 300px;
+      display: flex; /* Active le mode flex pour cette balise (ne se propage pas aux sous balises). */
+      /* flex-wrap: wrap; */ /* Accepter la repartition d'éléments sur l'axe seconde. */
+      /* flex-direction: row; */ /* Choix de l'axe principal (row = horizontal ; column => vertical). */
+      flex-flow: row wrap; /* flex-wrap + flex-direction (par défaut row nowrap). */
+      justify-content: space-between; /* Choix d'alignement des enfants sur l'axe principal (horizontal dans le cas présent). */
+      align-items: center; /* Choix d'alignement des enfants sur l'axe secondaire (vertical dans le cas présent). */
+    }
+
+    .flex div {
+      border: 1px solid black;
+      background-color: pink;
+      height: 80px;
+      width: 200px;
+      /* flex-grow: nb; Permet de définir une importance à l'enfant (qui récupérera l'espace restant de l'axe principal pour lui). */
+    }
+
+    .flex div:first-of-type {
+      height: 120px;
+      width: 100px;
+    }
+
+    .flex-images {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flex-images img {
+      margin: 5px;
+      flex-grow: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="index.html" class="btn btn-primary">Retour</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Quelques systèmes de positionnements en CSS</h1>
+
+      <h2>Propriété float</h2>
+
+      <p class="text-avec-image">
+        <img src="https://fakeimg.pl/300/" alt="Image d'illustration du lorem ipsum">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam at tempore ea fugit dolore debitis nisi saepe dolores labore, impedit id fuga commodi qui! Consequuntur aliquid quam minima totam quia.
+        Maxime, similique eligendi, expedita rerum ipsam voluptatibus accusantium doloremque corporis deserunt iusto non voluptates molestiae quas officiis ullam nesciunt quibusdam omnis atque. Sint accusantium saepe cumque! Itaque sint saepe veritatis.
+        Velit dignissimos, ipsam itaque, atque officia corporis enim perferendis neque consequuntur excepturi sequi reprehenderit optio! Corrupti aliquam, itaque perferendis nam quas facilis temporibus voluptate harum omnis enim! Debitis, provident ad!
+        Enim velit incidunt laboriosam hic distinctio voluptates assumenda omnis dicta fuga? Eaque vero tenetur ex, voluptates laboriosam quibusdam sunt unde temporibus totam enim, nostrum placeat est debitis laborum numquam excepturi?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores numquam corporis esse perspiciatis, officiis ad similique sapiente ut ratione libero sint nulla quos nobis fuga minus quis quia aut rem.
+        Tempore, pariatur temporibus excepturi dolores eveniet architecto tenetur possimus ex aliquam similique nam libero quibusdam earum assumenda dicta, eos vero sunt ab omnis nisi ad nemo laudantium voluptate atque? Quos!
+        Soluta beatae reiciendis laborum omnis illo molestias, quidem repudiandae laboriosam incidunt? Obcaecati officia recusandae fugit aspernatur dolorem ipsa laboriosam esse exercitationem laudantium magni. Amet repellendus commodi ipsam nemo optio id.
+        Consequatur voluptate ipsa beatae. Quaerat quos laborum suscipit sunt cum accusantium magni aliquid! Id, rem soluta, vitae quo hic quasi illo distinctio facilis praesentium, inventore in! Corrupti esse tenetur quisquam?
+        Aut molestias tempora pariatur vel quia nostrum fugiat, eius aperiam aspernatur. Sapiente dolorem adipisci quia quod amet asperiores rem totam magni maxime dignissimos laboriosam libero culpa iusto ratione, fugiat officiis?
+      </p>
+
+      <h2>Propriété float + media query</h2>
+
+
+      <p class="text-avec-image sm-full-image">
+        <img src="https://fakeimg.pl/300/" alt="Image d'illustration du lorem ipsum">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam at tempore ea fugit dolore debitis nisi saepe dolores labore, impedit id fuga commodi qui! Consequuntur aliquid quam minima totam quia.
+        Maxime, similique eligendi, expedita rerum ipsam voluptatibus accusantium doloremque corporis deserunt iusto non voluptates molestiae quas officiis ullam nesciunt quibusdam omnis atque. Sint accusantium saepe cumque! Itaque sint saepe veritatis.
+        Velit dignissimos, ipsam itaque, atque officia corporis enim perferendis neque consequuntur excepturi sequi reprehenderit optio! Corrupti aliquam, itaque perferendis nam quas facilis temporibus voluptate harum omnis enim! Debitis, provident ad!
+        Enim velit incidunt laboriosam hic distinctio voluptates assumenda omnis dicta fuga? Eaque vero tenetur ex, voluptates laboriosam quibusdam sunt unde temporibus totam enim, nostrum placeat est debitis laborum numquam excepturi?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores numquam corporis esse perspiciatis, officiis ad similique sapiente ut ratione libero sint nulla quos nobis fuga minus quis quia aut rem.
+        Tempore, pariatur temporibus excepturi dolores eveniet architecto tenetur possimus ex aliquam similique nam libero quibusdam earum assumenda dicta, eos vero sunt ab omnis nisi ad nemo laudantium voluptate atque? Quos!
+        Soluta beatae reiciendis laborum omnis illo molestias, quidem repudiandae laboriosam incidunt? Obcaecati officia recusandae fugit aspernatur dolorem ipsa laboriosam esse exercitationem laudantium magni. Amet repellendus commodi ipsam nemo optio id.
+        Consequatur voluptate ipsa beatae. Quaerat quos laborum suscipit sunt cum accusantium magni aliquid! Id, rem soluta, vitae quo hic quasi illo distinctio facilis praesentium, inventore in! Corrupti esse tenetur quisquam?
+        Aut molestias tempora pariatur vel quia nostrum fugiat, eius aperiam aspernatur. Sapiente dolorem adipisci quia quod amet asperiores rem totam magni maxime dignissimos laboriosam libero culpa iusto ratione, fugiat officiis?
+      </p>
+
+      <p>
+        Plus d'informations sur les media query sur le
+        <a href="https://www.alsacreations.com/article/lire/930-css3-media-queries.html">tutorial d'Alsacréations.</a>
+      </p>
+
+
+      <h2>Display inline-block</h2>
+
+      <div class="inline-block">
+        <ul>
+          <li><a href="#" alt="Menu bidon">Item n°1</a></li>
+          <li><a href="#" alt="Menu bidon">Item n°2</a></li>
+          <li><a href="#" alt="Menu bidon">Item n°3</a></li>
+          <li><a href="#" alt="Menu bidon">Item n°4</a></li>
+          <li><a href="#" alt="Menu bidon">Item n°5</a></li>
+        </ul>
+      </div>
+
+      <div class="inline-block">
+        <div class="btn-inline-block">
+          <a href="" class="btn">Btn n°01</a>
+          <a href="" class="btn">Btn n°02</a>
+          <a href="" class="btn">Btn n°03</a>
+          <a href="" class="btn">Btn n°04</a>
+          <a href="" class="btn">Btn n°05</a>
+          <a href="" class="btn">Btn n°06</a>
+          <a href="" class="btn">Btn n°07</a>
+          <a href="" class="btn">Btn n°08</a>
+          <a href="" class="btn">Btn n°09</a>
+          <a href="" class="btn">Btn n°10</a>
+          <a href="" class="btn">Btn n°11</a>
+          <a href="" class="btn">Btn n°12</a>
+          <a href="" class="btn">Btn n°13</a>
+          <a href="" class="btn">Btn n°14</a>
+          <a href="" class="btn">Btn n°15</a>
+          <a href="" class="btn">Btn n°16</a>
+          <a href="" class="btn">Btn n°17</a>
+          <a href="" class="btn">Btn n°18</a>
+          <a href="" class="btn">Btn n°19</a>
+          <a href="" class="btn">Btn n°20</a>
+          <a href="" class="btn">Btn n°21</a>
+          <a href="" class="btn">Btn n°22</a>
+          <a href="" class="btn">Btn n°23</a>
+          <a href="" class="btn">Btn n°24</a>
+          <a href="" class="btn">Btn n°25</a>
+          <a href="" class="btn">Btn n°26</a>
+          <a href="" class="btn">Btn n°27</a>
+          <a href="" class="btn">Btn n°28</a>
+          <a href="" class="btn">Btn n°29</a>
+          <a href="" class="btn">Btn n°30</a>
+        </div>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque molestias aliquid nesciunt dicta voluptatum, labore voluptas quod deserunt ut eius culpa omnis voluptate, id animi quos laboriosam consequatur officia.
+        </p>
+      </div>
+
+
+      <h2>Display Flex</h2>
+
+      <p>
+        Excellent tutoriel avec une explication des propriétés une/une sur <a href="https://www.alsacreations.com/tuto/lire/1493-CSS3-Flexbox-Layout-module.html">le site d'alsacréations</a>.
+      </p>
+
+      <div class="flex">
+        <div>Contenu n°1</div>
+        <div>Contenu n°2</div>
+        <div>Contenu n°3</div>
+        <div>Contenu n°4</div>
+        <div>Contenu n°5</div>
+      </div>
+
+      <div class="flex-images">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+        <img src="https://fakeimg.pl/100/" alt="Image d'illustration du lorem ipsum">
+      </div>
+
+
+      <h2>Système de grilles</h2>
+
+      <p>
+        Plus moderne, le système de grille. Un peu moins flexible que flex, mais plus rapide/simple d'utilisation pour des cas de bases.
+        Tutoriel présent sur <a href="https://www.alsacreations.com/tuto/lire/1790-Grid-Layout-et-positionnement-absolu.html">le site d'alsacréations</a>.
+      </p>
+    </main>
+  </div>
+</body>
+</html>
+
+<!-- Exemple Emmet
+https://emmet.io/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  .container>(header>nav>ul>li*4)+main+footer
+
+  Donne
+
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+    <main></main>
+    <footer></footer>
+  </div>
+</body>
+</html> -->
