@@ -1,0 +1,212 @@
+/*
+ * Il est possible d'importer une feuille de style dans une autre à l'aide de l'instruction @import.
+ * Mais cette dernière provoque la nécessité de faire une nouvelle requête (HTTP) pour chaque import.
+ */
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css';
+
+/* ****** *\
+|* HEADER *|
+\* ****** */
+
+body {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+#banner {
+  background-image: url("https://fakeimg.pl/1400x200/?text=Banniere");
+  /* width: 1400px; */
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.container>header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+  background-color: blue;
+  border: 1px solid navy;
+}
+
+nav li.active {
+  background-color: blueviolet;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* ****** *\
+|* FOOTER *|
+\* ****** */
+
+footer {
+  background-color: black;
+  color: beige;
+  margin-top: 10px;
+  padding: 30px;
+}
+
+
+/* ***** *\
+|* OTHER *|
+\* ***** */
+
+h1 {
+  color: orange;
+  font-size: 3.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+tr>td:first-of-type {
+  font-weight: bold;
+}
+
+a,
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+/*
+ * '*' => n'importe quelle balise
+ L'utilisation de ce "joker" est déconseillé (car il réduit les performances).
+ */
+/* * {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+/*
+ * Utilisation du principe de cascade.
+ * Toutes les règles appliquées sur body seront répercutées aux balises enfants (si elles n'ont pas de règle contradictoire).
+ */
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* a {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+  font-family: 'Times New Roman', Times, serif;
+} */
+
+.btn-primary {
+  background-color: green; /* Ecrasement d'une règle de bootstrap. */
+}
+.btn-primary::first-letter {
+  text-transform: uppercase;
+}
+
+dt { font-weight: bold; }
+
+dt::after { content: ' :'; }
+
+.cards main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 1px solid black;
+  width: 300px;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card header,
+.card main,
+.card footer {
+  padding: 5px;
+}
+
+.card main {
+  flex-grow: 1;
+}
+
+.card header {
+  background-color: beige;
+  border-bottom: 1px solid orange;
+}
+
+.card h1 {
+  font-size: 2em;
+  color: black;
+}
+
+.card header small {
+  text-align: right;
+  display: block;
+  font-style: italic;
+}
+
+.card footer {
+  /*
+  white : rgb(255, 255, 255); => #FFFFFF => #FFF
+  black : rgb(0, 0, 0);       => #000000 => #000
+  red   : rgb(255, 0, 0);     => #FF0000 => #F00
+  couleurspeciale: rgb(180, 180, 0);
+  couleurspeciale: rgb(180, 180, 0);
+  */
+  background-color: rgba(18, 88, 22, 0.5);
+  background-color: #8caf1886;
+  /*
+  0 =>  0
+  1 =>  1
+  2 =>  2
+  3 =>  3
+  4 =>  4
+  5 =>  5
+  6 =>  6
+  7 =>  7
+  8 =>  8
+  9 =>  9
+  A => 10
+  B => 11
+  C => 12
+  D => 13
+  E => 14
+  F => 15
+ 10 => 16
+ 11 => 17
+ */
+}
+
+.card footer a.btn {
+  color: #FFF;
+}
+
+.form-group p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

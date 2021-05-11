@@ -1,0 +1,11 @@
+{
+    "description": "JSON signifie JavaScript Object Notation",
+    "entier": 42,
+    "entierNegatif": -42,
+    "reel": 5.2,
+    "tableau": [1, 2, 42, "toto"],
+    "objet": {
+        "sousClef": "Valeur",
+        "compteur": 0
+    }
+}

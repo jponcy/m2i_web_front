@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TP2 | Correction</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <!--
+        On préfère ne pas utiliser une balise IMG pour une bannière car ce n'est pas une information réelle.
+        Dans ce cas on préfère afficher l'image en CSS.
+        <img src="https://fakeimg.pl/1400x200/?text=Banniere">
+      -->
+      <div id="banner"></div>
+
+      <nav>
+        <!-- Menu de navigation (doit rester toujours visible à l'écran) -->
+        <ul>
+          <li><a href="games_list.html">Liste des jeux</a></li>
+          <li class="active"><a href="nouveau_jeu.html">Ajouter un jeu</a></li>
+          <li><a href="about-us.html">&Agrave; propos de nous</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Correction du TP&nbsp;2</h1>
+
+      <form action="mailto:test.mail@yopmail.com" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input class="form-control" type="text" name="nom" id="nom" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prix">Prix de vente en € (HT)</label>
+            <input class="form-control" type="number" name="prix" id="prix" min="0" step="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="note">Note moyenne de satisfaction (/10)</label>
+            <input class="form-control" type="number" name="note" id="note" min="1" max="10" required>
+          </div>
+
+          <div class="form-group">
+            <p>Genre du jeu</p>
+
+            <div>
+              <input type="checkbox" name="genre" id="genre_platform" value="platform">
+              <label for="genre_platform">Plateform</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="genre" id="genre_action" value="action">
+              <label for="genre_action">Action</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="genre" id="genre_combat" value="combat">
+              <label for="genre_combat">Combat</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dev">Qui a créé le jeu ?</label>
+            <select class="form-control" name="dev" id="dev" required>
+              <option value="">Sélectionner un dev</option>
+              <option value="ea">Electronic Art</option>
+              <option value="bs">Behemot</option>
+              <option value="ubi">Ubisoft</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="editeur">Qui a publié le jeu ?</label>
+            <select class="form-control" name="editeur" id="editeur" multiple="multiple" required>
+              <option value="">Sélectionner un éditeur</option>
+              <option value="ea">Electronic Art</option>
+              <option value="bs">Behemot Studio</option>
+              <option value="ubi">Ubisoft</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label for="description">Description détaillée</label>
+          </div>
+          <textarea class="form-group" name="description" id="description" cols="30" rows="10"></textarea>
+        </fieldset>
+
+        <input class="btn btn-primary" type="submit" value="Enregistrer le jeu">
+      </form>
+
+    </main>
+
+    <footer>©m2i 2021</footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    var selects = document.querySelectorAll('select');
+
+    for (var i in selects) {
+      $(selects[i]).select2();
+    }
+  </script>
+</body>
+
+</html>
