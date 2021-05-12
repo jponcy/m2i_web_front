@@ -10,3 +10,6 @@ form,
 
 .bonus { font-style: italic; color: gray; }
 .bonus::after { content: ' (bonus)'; }
+
+#plus-ou-moins strong { color: green; }
+#plus-ou-moins li::first-letter { text-transform: uppercase; }
