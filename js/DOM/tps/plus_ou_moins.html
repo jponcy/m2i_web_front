@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeu du plus ou moins</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Jouons au plus ou moins</h1>
+
+  <h2>Le rendu</h2>
+
+  <div class="two-cols">
+    <form>
+      <label for="nb">Tentative</label>
+      <input type="number" name="nb" id="nb">
+
+      <input type="submit" value="Tenter sa chance">
+    </form>
+
+    <!-- Affichage de toutes les propositions qui ont étées faites depuis le début de la partie.-->
+    <div id="logs">
+    </div>
+  </div>
+
+  <h2>Décomposition possible de l'exercice</h2>
+
+  <p>
+    Il est autorisé de modifier le HTML ainsi que le CSS.
+  </p>
+
+  <ol>
+    <li>créer un fichier JS et le lier à la page (l'importer)</li>
+    <li>tenter (dans le JS) de capturer la div avec l'id #logs</li>
+    <li>modifier le contenu de la div#logs</li>
+    <li>récuperer la valeur de l'input#nb</li>
+    <li>ajouter un événement permettant sur envoie du formulaire (input[type="submit"]::click OU <strong>form::submit</strong>)</li>
+    <li>faire le traitement d'ajout de texte à chaque envoie de formulaire</li>
+    <li class="bonus">cacher le formulaire quand la partie est finie, et afficher un paragraphe à la place disant que l'on a gagné.</li>
+  </ol>
+</body>
+</html>

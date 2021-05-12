@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple de formulaire</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Exemple de formulaire</h1>
+
+    <h2>Création d'un nouveau magasin dans le catalogue</h2>
+
+    <form>
+      <div class="row">
+        <div class="col-md">
+          <div class="form-group">
+            <label for="nom">Nom du magasin</label>
+            <input class="form-control" type="text" name="nom" id="nom">
+          </div>
+
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input class="form-control" type="text" name="adresse" id="adresse">
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class="form-group">
+            <label for="desc">Description du magasin</label>
+            <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-default">Ajouter un produit</button>
+
+      <table id="articles">
+        <thead>
+          <th>
+            <th>Nom du produit</th>
+            <th>Prix</th>
+            <th>Actions</th>
+          </th>
+        </thead>
+
+        <tbody>
+          <!-- Une ligne de produit ressemblera à ça :
+          <tr>
+            <td><input type="text" name="produit_1_nom" value="Mug Batman"></td>
+            <td><input type="number" name="produit_1_prix" id="14.5"></td>
+            <td>
+              <button class="btn btn-danger">Supprimer</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <div class="actions">
+        <input type="submit" value="Enregistrer" class="btn btn-primary">
+      </div>
+    </form>
+
+
+    <h2>Consignes</h2>
+
+    <ol>
+      <li>
+        surcharger le code de l'envoie du formulaire pour afficher dans une alert la valeur des champs
+        <ul>
+          <li>#nom</li>
+          <li>#adresse</li>
+          <li>#desc</li>
+        </ul>
+      </li>
+
+      <li>
+        le bouton ajouter une ligne permettra l'ajout d'une ligne dans le tableau de produits
+        <br>
+        nous utiliserons document.createElement (et les autres fonctions vu en cours pour créer cette ligne)
+      </li>
+
+      <li>implémenter le bouton de suppression d'une ligne</li>
+
+      <li>modifier l'action du submit afin de lister aussi les produits saisies (C.f. 1)</li>
+      <li class="bonus">faire en sorte que le tableau de produits ne soit affiché que s'il y a au moins une ligne (de produit) à l'intérieur. On affichera le code suivant s'il n'y a pas de produit :
+        <pre>
+          &lt;p class="text text-warning">
+            Aucun produit.
+          &lt;/p>
+        </pre>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
